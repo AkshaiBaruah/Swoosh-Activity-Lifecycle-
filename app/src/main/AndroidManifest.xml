@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Swoosh">
-        <activity android:name=".LeagueActivity"></activity>
+        <activity
+            android:name=".SkillActivity"
+            android:exported="true" />
+        <activity android:name=".LeagueActivity" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
