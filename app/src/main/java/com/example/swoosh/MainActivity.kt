@@ -9,7 +9,13 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        //creating button object for get started button
+
         val getStartedBtn : Button = findViewById(R.id.getStartedBtn)
+
+        //using the onclicklistener method on getstartedBtn object
+
         getStartedBtn.setOnClickListener {
             val leagueIntent = Intent(this , LeagueActivity::class.java)
             startActivity(leagueIntent)
