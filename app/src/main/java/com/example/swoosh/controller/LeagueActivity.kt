@@ -1,4 +1,4 @@
-package com.example.swoosh
+package com.example.swoosh.controller
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -6,6 +6,8 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.Toast
 import android.widget.ToggleButton
+import com.example.swoosh.utilities.EXTRA_LEAGUE
+import com.example.swoosh.R
 
 class LeagueActivity : AppCompatActivity() {
 
