@@ -6,8 +6,9 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.Toast
 import android.widget.ToggleButton
-import com.example.swoosh.utilities.EXTRA_LEAGUE
 import com.example.swoosh.R
+import com.example.swoosh.model.Player
+import com.example.swoosh.utilities.EXTRA_PLAYER
 
 class LeagueActivity : AppCompatActivity() {
 
@@ -16,7 +17,7 @@ class LeagueActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_league)
 
-        lateinit var chosenLeague : String
+        val player = Player("","")
 
         // Setting up button objects so that onclickListener method may be used to do specific tasks when clicked.
 
@@ -30,17 +31,17 @@ class LeagueActivity : AppCompatActivity() {
         mensBtn.setOnClickListener {
             womensBtn.isChecked = false
             coedBtn.isChecked = false
-            chosenLeague = "mens"
+            player.chosenLeague = "mens"
         }
         womensBtn.setOnClickListener {
             mensBtn.isChecked = false
             coedBtn.isChecked = false
-            chosenLeague = "womens"
+            player.chosenLeague = "womens"
         }
         coedBtn.setOnClickListener {
             womensBtn.isChecked = false
             mensBtn.isChecked = false
-            chosenLeague = "co-ed"
+            player.chosenLeague = "co-ed"
         }
         desiredLeagueNxtBtn.setOnClickListener {
 
@@ -48,7 +49,7 @@ class LeagueActivity : AppCompatActivity() {
 
             if(womensBtn.isChecked || mensBtn.isChecked || coedBtn.isChecked){
                 val skillActivity = Intent(this, SkillActivity::class.java)
-                skillActivity.putExtra(EXTRA_LEAGUE , chosenLeague)                          //way to pass things to next activity
+                skillActivity.putExtra(EXTRA_PLAYER,player)                       //way to pass things to next activity
                 startActivity(skillActivity)
             }
 
