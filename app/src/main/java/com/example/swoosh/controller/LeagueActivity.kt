@@ -12,12 +12,24 @@ import com.example.swoosh.utilities.EXTRA_PLAYER
 
 class LeagueActivity : AppCompatActivity() {
 
+    private val player = Player("","")
+
+    /*override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putParcelable(EXTRA_PLAYER , player)
+    }
+    "It was in lesson instance state but this app does not change orientation when rotated so the
+    instance of the activity does not get destroyed." After this we had to override fun onRestoreInstantState.
+    Here outState that is passed from above fun is received as parameter and we can call getParcelable
+    method and assign it to player again using the EXTRA_PLAYER key.
+    */
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_league)
 
-        val player = Player("","")
+
 
         // Setting up button objects so that onclickListener method may be used to do specific tasks when clicked.
 
